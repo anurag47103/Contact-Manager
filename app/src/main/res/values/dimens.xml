@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="general_padding">25dp</dimen>
-    <dimen name="general_margin">20dp</dimen>
+    <dimen name="general_padding">8dp</dimen>
+    <dimen name="general_margin">12dp</dimen>
     <dimen name="card_elevation">20dp</dimen>
-    <dimen name="button_padding">10dp</dimen>
+    <dimen name="button_padding">8dp</dimen>
     <dimen name="card_corner_radius">20dp</dimen>
+    <dimen name="row_margin">6dp</dimen>
+    <dimen name="row_padding">4dp</dimen>
 </resources>

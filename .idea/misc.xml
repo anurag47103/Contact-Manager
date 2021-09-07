@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24230072463768115" />
         <entry key="app/src/main/res/layout/add_contact.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/row_recycler_view.xml" value="0.25" />
       </map>
     </option>
   </component>

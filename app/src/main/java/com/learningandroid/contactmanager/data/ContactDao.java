@@ -2,6 +2,7 @@ package com.learningandroid.contactmanager.data;
 
 import androidx.core.view.WindowInsetsAnimationCompat;
 import androidx.lifecycle.LiveData;
+import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
@@ -10,6 +11,7 @@ import com.learningandroid.contactmanager.model.Contact;
 
 import java.util.List;
 
+@Dao
 public interface ContactDao  {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)

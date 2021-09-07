@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ContactManager</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_occupation">Occupation</string>
+    <string name="todo">TODO</string>
+    <string name="save_button">SAVE</string>
 </resources>

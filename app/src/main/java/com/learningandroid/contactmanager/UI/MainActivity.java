@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity implements ContactOnClickLis
                     .create(ContactViewModel.class);
 
 
-        viewModel.getAllContacts().observe(this, new Observer<List<Contact>>() {
+        viewModel.getAllContacts().observe(MainActivity.this, new Observer<List<Contact>>() {
             @Override
             public void onChanged(List<Contact> contacts) {
                 StringBuilder stringBuilder = new StringBuilder();
-                recyclerViewAdapter = new RecyclerViewAdapter(contacts , MainActivity.this);
+                recyclerViewAdapter = new RecyclerViewAdapter (contacts , MainActivity.this , this);
                 recyclerView.setAdapter(recyclerViewAdapter);
 
             }

@@ -18,10 +18,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<ContactViewHolder>
 
     private List<Contact> contactList;
     private Context context;
+    private ContactOnClickListener contactOnClickListener;
 
-    public RecyclerViewAdapter(List<Contact> contactList, Context context) {
+    public RecyclerViewAdapter(List<Contact> contactList, Context contex , ContactOnClickListener contactOnClickListenert) {
         this.contactList = contactList;
         this.context = context;
+        this.contactOnClickListener = contactOnClickListenert;
     }
 
     @NonNull
@@ -30,7 +32,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<ContactViewHolder>
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.row_recycler_view ,
                 parent , false);
-        return new ContactViewHolder(view);
+        return new ContactViewHolder(view ,contactOnClickListener);
     }
 
     @Override

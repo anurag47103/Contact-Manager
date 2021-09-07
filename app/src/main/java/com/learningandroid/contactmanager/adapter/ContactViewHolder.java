@@ -13,15 +13,17 @@ import com.learningandroid.contactmanager.R;
 public class ContactViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView row_name;
     public TextView row_occupation;
-    public ContactViewHolder(@NonNull View itemView) {
+    ContactOnClickListener contactOnClickListener;
+    public ContactViewHolder(@NonNull View itemView , ContactOnClickListener contactOnClickListener) {
         super(itemView);
         row_name = itemView.findViewById(R.id.nameTextView);
         row_occupation = itemView.findViewById(R.id.occupationTextView);
         itemView.setOnClickListener(this);
+        this.contactOnClickListener = contactOnClickListener;
     }
 
     @Override
     public void onClick(View view) {
-        Log.d("clicked", "onClick: inside" );
+        contactOnClickListener.onContactClick(getAdapterPosition());
     }
 }

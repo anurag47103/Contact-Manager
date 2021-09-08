@@ -5,4 +5,7 @@
     <string name="todo">TODO</string>
     <string name="save_button">SAVE</string>
     <string name="delete_all_button">Delete All</string>
+    <string name="update_button">UPDATE</string>
+    <string name="delete_button">DELETE</string>
+    <string name="empty">Empty Value</string>
 </resources>

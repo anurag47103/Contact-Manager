@@ -23,10 +23,12 @@ import com.learningandroid.contactmanager.model.Contact;
 import com.learningandroid.contactmanager.model.ContactViewModel;
 
 import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements ContactOnClickListener {
 
     private static final int REQUEST_CODE = 121;
+    public static final String CONTACT_ID = "contact_id";
     private FloatingActionButton fab;
     private ContactViewModel viewModel;
     private Button deleteAllButton;
@@ -51,14 +53,11 @@ public class MainActivity extends AppCompatActivity implements ContactOnClickLis
                     .create(ContactViewModel.class);
 
 
-        viewModel.getAllContacts().observe(MainActivity.this, new Observer<List<Contact>>() {
-            @Override
-            public void onChanged(List<Contact> contacts) {
-                StringBuilder stringBuilder = new StringBuilder();
+        viewModel.getAllContacts().observe(MainActivity.this, contacts -> {
+            StringBuilder stringBuilder = new StringBuilder();
                 recyclerViewAdapter = new RecyclerViewAdapter (contacts , MainActivity.this , this);
-                recyclerView.setAdapter(recyclerViewAdapter);
+            recyclerView.setAdapter(recyclerViewAdapter);
 
-            }
         });
 
 
@@ -89,6 +88,11 @@ public class MainActivity extends AppCompatActivity implements ContactOnClickLis
 
     @Override
     public void onContactClick(int position) {
-        Log.d("TAG", "onContactClick: " + position);
+
+        Contact contact = Objects.requireNonNull(viewModel.getAllContacts().getValue()).get(position);
+        Log.d("clicked", "onContactClick: " + contact.getName());
+        Intent intent = new Intent(MainActivity.this , AddContactActivity.class);
+        intent.putExtra(CONTACT_ID, contact.getId());
+        startActivity(intent);
     }
 }

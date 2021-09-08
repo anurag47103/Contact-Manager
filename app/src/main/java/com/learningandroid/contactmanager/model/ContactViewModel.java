@@ -33,4 +33,10 @@ public class ContactViewModel extends AndroidViewModel {
     public LiveData<List<Contact>> getAllContacts() {
         return contactList;
     }
+
+    public LiveData<Contact> get(int id) {return repository.get(id);}
+
+    public static void update(Contact contact) {repository.update(contact);}
+
+    public static void delete(Contact contact) {repository.delete(contact);}
 }
